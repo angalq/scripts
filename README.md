@@ -1,2 +1,3 @@
-# certificados-icp-brasil
-Scripts para instalação de cadeia de certificados ICP Brasil
+# Certificados ICP-Brasil
+
+Este repositorio contém scripts para instalação de cadeia de certificados ICP Brasil.
