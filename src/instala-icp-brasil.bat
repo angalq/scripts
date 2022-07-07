@@ -131,5 +131,14 @@ if not %ERRORLEVEL% equ 0 (
 	exit /b 1
 )
 
+set URL=https://github.com/angalq/certificados-icp-brasil/blob/v20220707/src/dataprev.cer?raw=true
+powershell -Command "(New-Object Net.WebClient).DownloadFile('%URL%', '%TEMP%\dataprev.cer')"
+certutil -f -addstore CA %TEMP%\dataprev.cer
+if not %ERRORLEVEL% equ 0 (
+	echo Falha na instalacao da cadeia de certificados para o Google Chrome
+	pause
+	exit /b 1
+)
+
 echo Certificados ICP-Brasil instalados!
 pause
